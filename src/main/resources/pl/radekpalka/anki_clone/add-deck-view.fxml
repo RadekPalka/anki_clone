@@ -11,7 +11,8 @@
     <children>
         <Label fx:id="titleLabel">Deck title</Label>
         <TextField promptText="Enter new deck name" fx:id="deckTitle" />
-        <Button onAction="#handleAddDeck" >Add</Button>
+        <Button onAction="#handleAddFlashCard" >Add</Button>
+        <VBox fx:id="cardsContainer" spacing="10" />
         <Button onAction="#saveDeck">Save</Button>
     </children>
 

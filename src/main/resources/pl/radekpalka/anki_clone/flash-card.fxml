@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<HBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="pl.radekpalka.anki_clone.FlashCardController"
+      spacing="10">
+
+    <children>
+        <Label text="Front:" />
+        <TextField fx:id="frontInput" promptText="Question" />
+        <Label text="Back:" />
+        <TextField fx:id="backInput" promptText="Answer" />
+    </children>
+</HBox>
