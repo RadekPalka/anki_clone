@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+    
+    <VBox alignment="CENTER_LEFT" spacing="10.0"
+      xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="pl.radekpalka.anki_clone.AddDeckController">
+
+    <children>
+        <Label fx:id="titleLabel">Deck title</Label>
+        <TextField promptText="Enter new deck name" fx:id="deckTitle" />
+        <Button onAction="#handleAddDeck" >Add</Button>
+        <Button onAction="#saveDeck">Save</Button>
+    </children>
+
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20" />
+    </padding>
+</VBox>
+
+    
