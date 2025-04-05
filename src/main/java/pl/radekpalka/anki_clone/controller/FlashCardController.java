@@ -1,4 +1,4 @@
-package pl.radekpalka.anki_clone;
+package pl.radekpalka.anki_clone.controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;

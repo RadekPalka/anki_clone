@@ -1,4 +1,4 @@
-package pl.radekpalka.anki_clone;
+package pl.radekpalka.anki_clone.controller;
 
 import java.io.IOException;
 
