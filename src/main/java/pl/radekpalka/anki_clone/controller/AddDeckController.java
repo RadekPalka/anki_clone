@@ -11,6 +11,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import pl.radekpalka.anki_clone.model.Deck;
+import pl.radekpalka.anki_clone.model.Flashcard;
 
 public class AddDeckController {
     private final List<FlashcardController> flashcardControllers = new ArrayList<>();
@@ -30,9 +32,23 @@ public class AddDeckController {
 }
 
     @FXML
-    private void saveDeck(){
-        deckTitle.getText();
-        System.out.println(deckTitle.getText());
+    private void createNewDeck(){
+        String title= deckTitle.getText().trim();
+        if (title.isEmpty()){
+            title = "New Deck";
+        }
+
+        Deck deck = new Deck(title);
+        
+        for (var controller : flashcardControllers){
+            String front = controller.getFront().trim();
+            String back = controller.getBack().trim();
+            if (!front.isEmpty() && !back.isBlank()){
+                var flashcard = new Flashcard(front, back);
+                deck.addFlashcard(flashcard);
+            }
+        }
+
     }
 
     @FXML
