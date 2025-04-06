@@ -13,7 +13,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
 public class AddDeckController {
-    private final List<FlashCardController> flashCardControllers = new ArrayList<>();
+    private final List<FlashcardController> flashcardControllers = new ArrayList<>();
 
     @FXML
     private VBox cardsContainer;
@@ -37,11 +37,11 @@ public class AddDeckController {
 
     @FXML
     private void handleAddFlashCard() throws IOException {
-    FXMLLoader loader = new FXMLLoader(getClass().getResource("/pl/radekpalka/anki_clone/flash-card.fxml"));
+    FXMLLoader loader = new FXMLLoader(getClass().getResource("/pl/radekpalka/anki_clone/flashcard.fxml"));
     HBox cardRow = loader.load();
 
-    FlashCardController controller = loader.getController();
-    flashCardControllers.add(controller);
+    FlashcardController controller = loader.getController();
+    flashcardControllers.add(controller);
 
     cardsContainer.getChildren().add(cardRow);
 }

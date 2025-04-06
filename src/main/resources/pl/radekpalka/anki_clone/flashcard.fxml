@@ -5,7 +5,7 @@
 <?import javafx.geometry.Insets?>
 
 <HBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="pl.radekpalka.anki_clone.controller.FlashCardController"
+      fx:controller="pl.radekpalka.anki_clone.controller.FlashcardController"
       spacing="10">
 
     <children>

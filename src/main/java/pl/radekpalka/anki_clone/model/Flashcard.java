@@ -1,5 +1,5 @@
 package pl.radekpalka.anki_clone.model;
 
-public class FlashCard {
-
+public class Flashcard {
+    
 }
