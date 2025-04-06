@@ -12,9 +12,9 @@ import javafx.stage.Stage;
 public class MainViewController {
 
     @FXML
-    private void handleClick() throws IOException {
+    private void addDeck() throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/pl/radekpalka/anki_clone/add-deck-view.fxml")); // <- TO BYŁO POMINIĘTE
-        Parent root = loader.load(); // <- tu był problem
+        Parent root = loader.load();
     
         Stage dialogStage = new Stage();
         dialogStage.setScene(new Scene(root));
