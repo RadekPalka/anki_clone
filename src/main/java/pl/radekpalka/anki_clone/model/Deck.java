@@ -4,11 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Deck {
-    List<Flashcard> flashcards = new ArrayList<>();
     private String title;
+    List<Flashcard> flashcards = new ArrayList<>();
 
     public Deck(String title){
         this.title = title;
+    }
+
+    public String getTitle() {
+        return title;
     }
 
     public void addFlashcard (Flashcard flashcard){

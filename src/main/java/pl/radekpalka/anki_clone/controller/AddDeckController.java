@@ -11,8 +11,10 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import pl.radekpalka.anki_clone.data.FileManager;
 import pl.radekpalka.anki_clone.model.Deck;
 import pl.radekpalka.anki_clone.model.Flashcard;
+import pl.radekpalka.anki_clone.util.Paths;
 
 public class AddDeckController {
     private final List<FlashcardController> flashcardControllers = new ArrayList<>();
@@ -39,7 +41,7 @@ public class AddDeckController {
         }
 
         Deck deck = new Deck(title);
-        
+
         for (var controller : flashcardControllers){
             String front = controller.getFront().trim();
             String back = controller.getBack().trim();
@@ -49,6 +51,7 @@ public class AddDeckController {
             }
         }
 
+        FileManager.saveDeck(deck, Paths.DECKS_FOLDER);
     }
 
     @FXML
