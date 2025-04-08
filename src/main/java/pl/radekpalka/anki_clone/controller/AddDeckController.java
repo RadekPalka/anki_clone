@@ -11,6 +11,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 import pl.radekpalka.anki_clone.data.FileManager;
 import pl.radekpalka.anki_clone.data.UserData;
 import pl.radekpalka.anki_clone.model.Deck;
@@ -53,6 +54,8 @@ public class AddDeckController {
         }
 
         FileManager.saveDeck(deck, Paths.DECKS_FOLDER);
+        Stage stage = (Stage) deckTitle.getScene().getWindow();
+        stage.close();
     }
 
     @FXML
