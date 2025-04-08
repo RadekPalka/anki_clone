@@ -2,6 +2,7 @@ package pl.radekpalka.anki_clone.controller;
 
 import java.io.IOException;
 
+import javafx.collections.ListChangeListener;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -11,6 +12,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import pl.radekpalka.anki_clone.data.UserData;
+import pl.radekpalka.anki_clone.model.Deck;
 
 public class MainViewController{
 
@@ -21,8 +23,22 @@ public class MainViewController{
     public void initialize(){
         UserData.updateDecksFromLocalDrive();
 
-        for (var deck : UserData.getDecks()){
-            try {
+        UserData.getDecks().addListener((ListChangeListener<Deck>) change -> {
+        while (change.next()) {
+            if (change.wasAdded() || change.wasRemoved()) {
+                renderDeckList();
+            }
+        }
+    });
+
+        renderDeckList();
+    }
+
+    private void renderDeckList() {
+    decksContainer.getChildren().clear();
+
+    for (Deck deck : UserData.getDecks()) {
+        try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/pl/radekpalka/anki_clone/deck-preview.fxml"));
             HBox deckRow = loader.load();
 
@@ -33,8 +49,9 @@ public class MainViewController{
         } catch (IOException e) {
             e.printStackTrace();
         }
-        }
     }
+}
+
 
     @FXML
     private void addDeck() throws IOException {
