@@ -38,7 +38,6 @@ public class FileManager {
 
     File[] files = dir.listFiles((d, name) -> name.endsWith(".json"));
     if (files == null) return List.of();
-
     List<Deck> decks = new ArrayList<>();
     for (File file : files) {
         try (FileReader reader = new FileReader(file)) {
