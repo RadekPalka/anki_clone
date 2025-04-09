@@ -15,7 +15,7 @@ import javafx.stage.Stage;
 import pl.radekpalka.anki_clone.data.FileManager;
 import pl.radekpalka.anki_clone.data.UserData;
 import pl.radekpalka.anki_clone.model.Deck;
-import pl.radekpalka.anki_clone.model.Flashcard;
+import pl.radekpalka.anki_clone.service.DeckService;
 import pl.radekpalka.anki_clone.util.Paths;
 
 public class AddDeckController {
@@ -47,10 +47,7 @@ public class AddDeckController {
         for (var controller : flashcardControllers){
             String front = controller.getFront().trim();
             String back = controller.getBack().trim();
-            if (!front.isEmpty() && !back.isEmpty()){
-                var flashcard = new Flashcard(front, back);
-                deck.addFlashcard(flashcard);
-            }
+            DeckService.addFlashcardIfValid(deck, front, back);
         }
 
         FileManager.saveDeck(deck, Paths.DECKS_FOLDER);
