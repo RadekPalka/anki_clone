@@ -47,7 +47,7 @@ public class AddDeckController {
         for (var controller : flashcardControllers){
             String front = controller.getFront().trim();
             String back = controller.getBack().trim();
-            if (!front.isEmpty() && !back.isBlank()){
+            if (!front.isEmpty() && !back.isEmpty()){
                 var flashcard = new Flashcard(front, back);
                 deck.addFlashcard(flashcard);
             }
