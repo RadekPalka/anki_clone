@@ -28,5 +28,9 @@ public class Deck {
         }
         return message.toString();
     }
+
+    public List<Flashcard> getFlashcards() {
+        return flashcards;
+    }
    
 }
