@@ -65,20 +65,22 @@ public class DeckServiceTest {
     }
 
     @Test
-    void deckWithEmptyTitleShouldBeHandledProperly(){
-        Deck deckWithEmptyTitle = new Deck("");
-        
-        DeckService.changeTitleIfEmpty(deckWithEmptyTitle);
-
-        assertEquals("New deck", deckWithEmptyTitle.getTitle());
+    void shouldReturnDefaultTitleWhenGivenEmptyString() {
+        assertEquals("New deck", DeckService.provideDefaultIfBlank(""));
     }
 
     @Test
-    void deckWithSpaceInTitleShouldBeHandledProperly(){
-        Deck deckWithSpaceInTitle = new Deck(" ");
+    void shouldReturnDefaultTitleWhenGivenWhitespace(){
+        assertEquals("New deck", DeckService.provideDefaultIfBlank(" "));
+    }
 
-        DeckService.changeTitleIfEmpty(deckWithSpaceInTitle);
-        
-        assertEquals("New deck", deckWithSpaceInTitle.getTitle());
+    @Test
+    void shouldReturnTitleWhenIsCorrect() {
+        assertEquals("Title", DeckService.provideDefaultIfBlank("Title"));
+    }
+
+    @Test
+    void shouldTrimWhitespaceFromTitle() {
+        assertEquals("Title", DeckService.provideDefaultIfBlank("  Title  "));
     }
 }
