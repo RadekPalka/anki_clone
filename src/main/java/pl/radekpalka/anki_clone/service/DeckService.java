@@ -10,7 +10,7 @@ public class DeckService {
         front = front.trim();
         back = back.trim();
         
-        if (front != null && back != null && !front.isEmpty() && !back.isEmpty()){
+        if (!front.isEmpty() && !back.isEmpty()){
                 var flashcard = new Flashcard(front, back);
                 deck.addFlashcard(flashcard);
             }
