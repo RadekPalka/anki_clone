@@ -16,7 +16,10 @@ public class DeckService {
             }
     }
 
-    public static boolean checkIfTitleIsNotEmpty(String title){
-        return !title.isBlank();
+    public static String provideDefaultIfBlank(String title){
+        if (title.isBlank()){
+            return "New deck";
+        }
+        return title.trim();
     }
 }
