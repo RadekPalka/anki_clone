@@ -38,9 +38,10 @@ public class AddDeckController {
     @FXML
     private void createNewDeck(){
         String title= deckTitle.getText();
-
-        Deck deck = new Deck(title);
-        DeckService.changeTitleIfEmpty(deck);
+        String verifiedTitle = DeckService.provideDefaultIfBlank(title);
+        
+        Deck deck = new Deck(verifiedTitle);
+        
         UserData.getDecks().add(deck);
         for (var controller : flashcardControllers){
             String front = controller.getFront();
