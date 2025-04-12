@@ -41,6 +41,11 @@ public class DeckServiceTest {
         DeckService.addFlashcardIfValid(deck, "front", null);
         assertTrue(deck.getFlashcards().isEmpty(), "Flashcard with one null value should not be added");
     }
+    @Test
+    void flashcardWithOnlySpacesIsNotAdded(){
+        DeckService.addFlashcardIfValid(deck, " ", "back");
+        assertTrue(deck.getFlashcards().isEmpty(), "Flashcard with only whitespace should not be added to the deck");
+    }
     
     @Test
     void validFlashcardIsAddedToDeckWithCorrectValues(){
