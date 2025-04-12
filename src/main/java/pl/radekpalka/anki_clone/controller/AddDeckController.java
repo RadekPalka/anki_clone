@@ -38,7 +38,9 @@ public class AddDeckController {
     @FXML
     private void createNewDeck(){
         String title= deckTitle.getText();
-        String verifiedTitle = DeckService.provideDefaultIfBlank(title);
+        
+        String cleanedTitle = DeckService.provideDefaultIfBlank(title);
+        String verifiedTitle = DeckService.addIndexWhenTitleIsRepeated(cleanedTitle);
         
         Deck deck = new Deck(verifiedTitle);
         

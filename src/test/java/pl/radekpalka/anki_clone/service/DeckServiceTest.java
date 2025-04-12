@@ -7,6 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import pl.radekpalka.anki_clone.data.UserData;
 import pl.radekpalka.anki_clone.model.Deck;
 
 public class DeckServiceTest {
@@ -82,5 +83,15 @@ public class DeckServiceTest {
     @Test
     void shouldTrimWhitespaceFromTitle() {
         assertEquals("Title", DeckService.provideDefaultIfBlank("  Title  "));
+    }
+
+    @Test
+    void shouldAddIndexWhenRepeated(){
+        Deck newDeck = new Deck("Title");
+
+        UserData.getDecks().add(newDeck);
+
+        assertEquals("Title(1)", DeckService.addIndexWhenTitleIsRepeated("Title"));
+
     }
 }
