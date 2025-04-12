@@ -68,12 +68,16 @@ public class DeckServiceTest {
     void deckWithEmptyTitleShouldBeHandledProperly(){
         Deck deckWithEmptyTitle = new Deck("");
         
+        DeckService.changeTitleIfEmpty(deckWithEmptyTitle);
+
         assertEquals("New deck", deckWithEmptyTitle.getTitle());
     }
 
     @Test
     void deckWithSpaceInTitleShouldBeHandledProperly(){
         Deck deckWithSpaceInTitle = new Deck(" ");
+
+        DeckService.changeTitleIfEmpty(deckWithSpaceInTitle);
         
         assertEquals("New deck", deckWithSpaceInTitle.getTitle());
     }
