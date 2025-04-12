@@ -16,9 +16,7 @@ public class DeckService {
             }
     }
 
-    public static void changeTitleIfEmpty(Deck deck){
-        if (deck.getTitle().isBlank()){
-            deck.setTitle("New deck");
-        }
+    public static boolean checkIfTitleIsNotEmpty(String title){
+        return !title.isBlank();
     }
 }
