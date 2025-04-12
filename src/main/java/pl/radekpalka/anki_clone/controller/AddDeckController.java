@@ -37,10 +37,7 @@ public class AddDeckController {
 
     @FXML
     private void createNewDeck(){
-        String title= deckTitle.getText().trim();
-        if (title.isEmpty()){
-            title = "New Deck";
-        }
+        String title= deckTitle.getText();
 
         Deck deck = new Deck(title);
         UserData.getDecks().add(deck);
