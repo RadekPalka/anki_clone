@@ -63,4 +63,18 @@ public class DeckServiceTest {
             "Back value does not match expected")
     );
     }
+
+    @Test
+    void deckWithEmptyTitleShouldBeHandledProperly(){
+        Deck deckWithEmptyTitle = new Deck("");
+        
+        assertEquals("New deck", deckWithEmptyTitle.getTitle());
+    }
+
+    @Test
+    void deckWithSpaceInTitleShouldBeHandledProperly(){
+        Deck deckWithSpaceInTitle = new Deck(" ");
+        
+        assertEquals("New deck", deckWithSpaceInTitle.getTitle());
+    }
 }
