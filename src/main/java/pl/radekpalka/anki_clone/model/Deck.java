@@ -32,5 +32,9 @@ public class Deck {
     public List<Flashcard> getFlashcards() {
         return flashcards;
     }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
    
 }

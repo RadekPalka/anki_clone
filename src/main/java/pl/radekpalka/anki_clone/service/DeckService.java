@@ -15,4 +15,10 @@ public class DeckService {
                 deck.addFlashcard(flashcard);
             }
     }
+
+    public static void changeTitleIfEmpty(Deck deck){
+        if (deck.getTitle().isBlank()){
+            deck.setTitle("New deck");
+        }
+    }
 }

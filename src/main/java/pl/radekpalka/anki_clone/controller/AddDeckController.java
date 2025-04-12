@@ -40,6 +40,7 @@ public class AddDeckController {
         String title= deckTitle.getText();
 
         Deck deck = new Deck(title);
+        DeckService.changeTitleIfEmpty(deck);
         UserData.getDecks().add(deck);
         for (var controller : flashcardControllers){
             String front = controller.getFront();
