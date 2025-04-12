@@ -45,8 +45,8 @@ public class AddDeckController {
         Deck deck = new Deck(title);
         UserData.getDecks().add(deck);
         for (var controller : flashcardControllers){
-            String front = controller.getFront().trim();
-            String back = controller.getBack().trim();
+            String front = controller.getFront();
+            String back = controller.getBack();
             DeckService.addFlashcardIfValid(deck, front, back);
         }
 
