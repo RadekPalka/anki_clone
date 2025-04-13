@@ -11,6 +11,8 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import pl.radekpalka.anki_clone.api.ApiRoutes;
+import pl.radekpalka.anki_clone.api.DeckApiClient;
 import pl.radekpalka.anki_clone.data.UserData;
 import pl.radekpalka.anki_clone.model.Deck;
 
@@ -63,5 +65,9 @@ public class MainViewController{
         dialogStage.initModality(Modality.APPLICATION_MODAL);
         dialogStage.setTitle("Add new deck");
         dialogStage.showAndWait();
+    }
+    @FXML
+    private void getOfficialDecks() throws IOException{
+        System.out.println(DeckApiClient.getDecksFrom(ApiRoutes.OFFICIAL));
     }
 }
