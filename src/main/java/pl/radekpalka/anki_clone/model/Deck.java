@@ -4,8 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Deck {
+
     private String title;
+    private String author;
     List<Flashcard> flashcards = new ArrayList<>();
+
+    public Deck(){}
 
     public Deck(String title){
         this.title = title;
