@@ -87,11 +87,11 @@ public class DeckServiceTest {
 
     @Test
     void shouldAddIndexWhenRepeated(){
-        Deck newDeck = new Deck("Title");
 
-        UserData.getDecks().add(newDeck);
 
-        assertEquals("Title(1)", DeckService.addIndexWhenTitleIsRepeated("Title"));
+        UserData.getDecks().add(deck);
 
+        assertEquals("Testing(1)", DeckService.addIndexWhenTitleIsRepeated("Testing"));
+        assertEquals("Testing(1)", DeckService.addIndexWhenTitleIsRepeated(DeckService.provideDefaultIfBlank("   Testing   ")));
     }
 }
