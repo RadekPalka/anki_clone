@@ -9,7 +9,7 @@ import pl.radekpalka.anki_clone.model.Deck;
 import pl.radekpalka.anki_clone.util.FilePaths;
 
 public class UserData {
-    private static ObservableList<Deck> decks = FXCollections.observableArrayList();
+    private static final ObservableList<Deck> decks = FXCollections.observableArrayList();
 
     public static ObservableList<Deck> getDecks() {
         return decks;

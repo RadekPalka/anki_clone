@@ -7,7 +7,7 @@ public class Deck {
 
     private String title;
     private String author;
-    List<Flashcard> flashcards = new ArrayList<>();
+    private final List<Flashcard> flashcards = new ArrayList<>();
 
     public Deck(){}
 
