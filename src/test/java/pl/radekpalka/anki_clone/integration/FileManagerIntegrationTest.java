@@ -23,14 +23,7 @@ public class FileManagerIntegrationTest {
         assertFalse(loadedDecks.isEmpty(), "Deck list should not be empty");
         assertEquals(originalDeck.getTitle(), loadedDecks.get(0).getTitle(), "Deck title should match");
         
-        File testFolder = new File(TEST_FILE_PATH);
-        File[] files = testFolder.listFiles();
-        if (files != null) {
-            for (File file : files) {
-            file.delete();
-            }
-        }
-        testFolder.delete();
+        deleteTestFolder();
     }
 
     @Test
@@ -49,6 +42,19 @@ public class FileManagerIntegrationTest {
         assertEquals(front, testFlashcards.get(0).getFront(), "Front should be 'test front");
 
         assertEquals(back, testFlashcards.get(0).getBack(), "Front should be 'test back");
+
+        deleteTestFolder();
+    }
+
+    static void deleteTestFolder(){
+        File testFolder = new File(TEST_FILE_PATH);
+        File[] files = testFolder.listFiles();
+        if (files != null) {
+            for (File file : files) {
+            file.delete();
+            }
+        }
+        testFolder.delete();
     }
 
 }
