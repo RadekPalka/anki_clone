@@ -1,18 +1,11 @@
 package pl.radekpalka.anki_clone.controller;
-
 import java.io.IOException;
 
 import javafx.collections.ListChangeListener;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
-import pl.radekpalka.anki_clone.api.ApiRoutes;
-import pl.radekpalka.anki_clone.api.DeckApiClient;
 import pl.radekpalka.anki_clone.data.UserData;
 import pl.radekpalka.anki_clone.model.Deck;
 import pl.radekpalka.anki_clone.util.ModalHelper;
