@@ -6,7 +6,7 @@ import java.util.List;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import pl.radekpalka.anki_clone.model.Deck;
-import pl.radekpalka.anki_clone.util.Paths;
+import pl.radekpalka.anki_clone.util.FilePaths;
 
 public class UserData {
     private static ObservableList<Deck> decks = FXCollections.observableArrayList();
@@ -16,7 +16,7 @@ public class UserData {
     }
 
     public static void updateDecksFromLocalDrive(){
-        List<Deck> newDecks =  FileManager.loadAllDecks(Paths.DECKS_FOLDER);
+        List<Deck> newDecks =  FileManager.loadAllDecks(FilePaths.DECKS_FOLDER);
         decks.addAll(newDecks);
     }
 

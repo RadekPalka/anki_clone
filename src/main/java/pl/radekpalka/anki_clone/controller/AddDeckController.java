@@ -16,7 +16,7 @@ import pl.radekpalka.anki_clone.data.FileManager;
 import pl.radekpalka.anki_clone.data.UserData;
 import pl.radekpalka.anki_clone.model.Deck;
 import pl.radekpalka.anki_clone.service.DeckService;
-import pl.radekpalka.anki_clone.util.Paths;
+import pl.radekpalka.anki_clone.util.FilePaths;
 
 public class AddDeckController {
     private final List<FlashcardController> flashcardControllers = new ArrayList<>();
@@ -51,7 +51,7 @@ public class AddDeckController {
             DeckService.addFlashcardIfValid(deck, front, back);
         }
 
-        FileManager.saveDeck(deck, Paths.DECKS_FOLDER);
+        FileManager.saveDeck(deck, FilePaths.DECKS_FOLDER);
         Stage stage = (Stage) deckTitle.getScene().getWindow();
         stage.close();
     }
