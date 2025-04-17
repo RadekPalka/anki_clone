@@ -37,11 +37,12 @@ public class FileManagerIntegrationTest {
         List<Deck> loadedDecks = FileManager.loadAllDecks(TEST_FILE_PATH);
         List<Flashcard> testFlashcards = loadedDecks.get(0).getFlashcards();
 
-        assertEquals(originalDeck.getFlashcards().size(), testFlashcards.size(), "Size should be one");
+        assertEquals(originalDeck.getFlashcards().size(), testFlashcards.size(), "Expected flashcard size: " + originalDeck.getFlashcards().size() +
+        ", but was: " + testFlashcards.size());
 
-        assertEquals(front, testFlashcards.get(0).getFront(), "Front should be 'test front");
+        assertEquals(front, testFlashcards.get(0).getFront(), "Expected front property: " + front +", but was: "+ testFlashcards.get(0).getFront());
 
-        assertEquals(back, testFlashcards.get(0).getBack(), "Front should be 'test back");
+        assertEquals(back, testFlashcards.get(0).getBack(), "Expected back property: " + back +", but was: "+ testFlashcards.get(0).getBack());
 
         deleteTestFolder();
     }
